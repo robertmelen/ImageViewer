@@ -1,0 +1,8 @@
+<div class="row">
+    <div class="col-12">
+    <small>All images from the URL: {{ url }}</small>
+    </div>
+</div>
+{% for images in all_images %}
+<img src="{{ images }}" style="width: 200px;">
+{% endfor %}

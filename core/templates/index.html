@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}   
+<div class="container">
+    <div class="text-center">
+        <h1>Image Viewer</h1>
+            <form class="form-control" hx-post="{% url 'image_extraction' %}" hx-target="#results">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input class="btn btn-primary" type="submit" value="Submit">
+            </form>
+            <a href="/" hx-boost='true' >Clear</a>
+    </div>
+    <div id="results" class="text-center">
+        <small>This simple tool will show <strong>ALL</strong> images from within a given URL. Simply enter a valid URL,
+        (must include http:// or https:// at the start) and click submit.</small>  
+    </div>
+</div>
+{% endblock %}
